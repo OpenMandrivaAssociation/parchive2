@@ -1,6 +1,6 @@
 %define name parchive2
 %define version 0.4
-%define release %mkrel 2
+%define release %mkrel 3
 %define tarname par2cmdline-%{version}
 
 Summary:	Parchive: Parity Archive Volume Set
@@ -47,18 +47,14 @@ rm -rf $RPM_BUILD_ROOT
 %configure
 %make
 
-
 %install
 %makeinstall
 
-
 %clean
 rm -rf $RPM_BUILD_ROOT
-
 
 %files
 %defattr(-,root,root,755)
 %doc AUTHORS COPYING README ROADMAP
 %{_bindir}/*
-
 
