@@ -16,7 +16,6 @@ Patch0:		par2cmdline-gcc4.patch.bz2
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 
 %description
-
 The idea behind this project is to provide a tool to apply the data-
 recovery capability concepts of RAID-like systems to the posting and
 recovery of multi-part archives on Usenet. With a parity archive, this
