@@ -13,7 +13,6 @@ URL: 		http://parchive.sourceforge.net/
 # http://prdownloads.sourceforge.net/parchive/%{tarname}.tar.gz?download
 Source: 	http://prdownloads.sourceforge.net/parchive/%{tarname}.tar.bz2
 Patch0:		par2cmdline-gcc4.patch.bz2
-BuildRoot:	%{_tmppath}/%{name}-buildroot
 
 %description
 The idea behind this project is to provide a tool to apply the data-
