@@ -1,6 +1,6 @@
 %define name parchive2
 %define version 0.4
-%define release %mkrel 3
+%define release %mkrel 5
 %define tarname par2cmdline-%{version}
 
 Summary:	Parchive: Parity Archive Volume Set
