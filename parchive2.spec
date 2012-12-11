@@ -1,6 +1,6 @@
 %define name parchive2
 %define version 0.4
-%define release %mkrel 7
+%define release %mkrel 6
 %define tarname par2cmdline-%{version}
 
 Summary:	Parchive: Parity Archive Volume Set
@@ -57,3 +57,36 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS COPYING README ROADMAP
 %{_bindir}/*
 
+
+
+%changelog
+* Fri Sep 04 2009 Thierry Vignaud <tvignaud@mandriva.com> 0.4-6mdv2010.0
++ Revision: 430238
+- rebuild
+
+* Wed Jul 30 2008 Thierry Vignaud <tvignaud@mandriva.com> 0.4-5mdv2009.0
++ Revision: 255036
+- rebuild
+- kill re-definition of %%buildroot on Pixel's request
+- kill extra spacing at top of description
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+* Sun Dec 09 2007 Olivier Thauvin <nanardon@mandriva.org> 0.4-3mdv2008.1
++ Revision: 116614
+- rebuild
+- import parchive2
+
+
+* Mon Jan 02 2006 Lenny Cartier <lenny@mandriva.com> 0.4-2mdk
+- rebuild with debian patch
+
+* Tue Jun 15 2004 Lenny Cartier <lenny@mandrakesoft.com> 0.4-1mdk
+- 0.4
+
+* Sat Jul 19 2003 Han Boetes <han@linux-mandrake.com> 0.3-1mdk
+- bump
+
+* Fri May 30 2003 Han Boetes <han@linux-mandrake.com> 0.2-1mdk
+- Initial MDK built
