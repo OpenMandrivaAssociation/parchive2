@@ -9,7 +9,7 @@ Version:	%{version}
 Release:	%{release}
 Group:		Archiving/Other
 License:	GPL
-URL: 		http://parchive.sourceforge.net/
+URL: 		https://parchive.sourceforge.net/
 # http://prdownloads.sourceforge.net/parchive/%{tarname}.tar.gz?download
 Source: 	http://prdownloads.sourceforge.net/parchive/%{tarname}.tar.bz2
 Patch0:		par2cmdline-gcc4.patch.bz2
