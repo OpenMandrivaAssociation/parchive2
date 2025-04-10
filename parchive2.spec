@@ -1,92 +1,38 @@
-%define name parchive2
-%define version 0.4
-%define release 7
 %define tarname par2cmdline-%{version}
 
+Name:		parchive2
+Version:	0.8.1
+Release:	1
 Summary:	Parchive: Parity Archive Volume Set
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
 Group:		Archiving/Other
-License:	GPL
-URL: 		https://parchive.sourceforge.net/
-# http://prdownloads.sourceforge.net/parchive/%{tarname}.tar.gz?download
-Source: 	http://prdownloads.sourceforge.net/parchive/%{tarname}.tar.bz2
-Patch0:		par2cmdline-gcc4.patch.bz2
-BuildRoot:	%{_tmppath}/%{name}-buildroot
+License:	GPL-2.0-or-later
+URL:        https://github.com/Parchive/par2cmdline
+# project was formerly maintained at https://parchive.sourceforge.net/
+# they have moved development to github
+Source: 	https://github.com/Parchive/par2cmdline/archive/v%{version}/%{tarname}.tar.gz
+
+BuildRequires:	gcc-c++
 
 %description
-The idea behind this project is to provide a tool to apply the data-
-recovery capability concepts of RAID-like systems to the posting and
-recovery of multi-part archives on Usenet. With a parity archive, this
-tool, and all but one part of a multi-part set you can recover the
-missing part.
+%{name} / par2cmdline is a program for creating and using PAR2 files to detect
+damage in data files and repair them if necessary.
 
-The key to this mission is a clean file format specification which
-provides all the necessary capabilities for programs to easily verify
-and regenerate single missing parts out of a set of archives.
-
-We might just be able to make binary posting and downloading on Usenet a
-little easier. That's a pretty cool goal!
-
-par2 is complete rewrite of parchive with much additional advantages.
-Read all about them on this page:
-  http://www.pbclements.co.uk/QuickPar/AboutPAR2.htm
-
-Tip of the day: alias par='par2 r *.((p|P)??|par2)'
-
+It can be used with any kind of file.
 
 %prep
-rm -rf $RPM_BUILD_ROOT
-%setup -q -n %tarname
-
-%patch0 -p1
+%autosetup -n %{tarname} -p1
 
 %build
 %configure
-%make
+%make_build
 
 %install
-%makeinstall
+%make_install
 
-%clean
-rm -rf $RPM_BUILD_ROOT
+%check
+%make_build check
 
 %files
-%defattr(-,root,root,755)
+%{_bindir}/par2*
+%{_mandir}/man1/par2.1.*
 %doc AUTHORS COPYING README ROADMAP
-%{_bindir}/*
-
-
-
-%changelog
-* Fri Sep 04 2009 Thierry Vignaud <tvignaud@mandriva.com> 0.4-6mdv2010.0
-+ Revision: 430238
-- rebuild
-
-* Wed Jul 30 2008 Thierry Vignaud <tvignaud@mandriva.com> 0.4-5mdv2009.0
-+ Revision: 255036
-- rebuild
-- kill re-definition of %%buildroot on Pixel's request
-- kill extra spacing at top of description
-
-  + Olivier Blin <oblin@mandriva.com>
-    - restore BuildRoot
-
-* Sun Dec 09 2007 Olivier Thauvin <nanardon@mandriva.org> 0.4-3mdv2008.1
-+ Revision: 116614
-- rebuild
-- import parchive2
-
-
-* Mon Jan 02 2006 Lenny Cartier <lenny@mandriva.com> 0.4-2mdk
-- rebuild with debian patch
-
-* Tue Jun 15 2004 Lenny Cartier <lenny@mandrakesoft.com> 0.4-1mdk
-- 0.4
-
-* Sat Jul 19 2003 Han Boetes <han@linux-mandrake.com> 0.3-1mdk
-- bump
-
-* Fri May 30 2003 Han Boetes <han@linux-mandrake.com> 0.2-1mdk
-- Initial MDK built
