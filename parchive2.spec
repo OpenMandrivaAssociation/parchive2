@@ -1,9 +1,9 @@
 %define tarname par2cmdline-%{version}
 
 Name:		parchive2
-Version:	0.8.1
+Version:	1.0.0
 Release:	1
-Summary:	Parchive: Parity Archive Volume Set
+Summary:	Parchive: par2cmdline is a PAR 2.0 compatible file verification and repair tool.
 Group:		Archiving/Other
 License:	GPL-2.0-or-later
 URL:        https://github.com/Parchive/par2cmdline
@@ -35,4 +35,4 @@ It can be used with any kind of file.
 %files
 %{_bindir}/par2*
 %{_mandir}/man1/par2.1.*
-%doc AUTHORS COPYING README ROADMAP
+%doc AUTHORS COPYING README.md ROADMAP
