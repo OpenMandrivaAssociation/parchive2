@@ -11,6 +11,11 @@ URL:        https://github.com/Parchive/par2cmdline
 # they have moved development to github
 Source: 	https://github.com/Parchive/par2cmdline/archive/v%{version}/%{tarname}.tar.gz
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	gcc-c++
 
 %description
