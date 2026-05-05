@@ -1,15 +1,15 @@
 %define tarname par2cmdline-%{version}
 
 Name:		parchive2
-Version:	1.0.0
+Version:	1.1.1
 Release:	1
 Summary:	Parchive: par2cmdline is a PAR 2.0 compatible file verification and repair tool.
 Group:		Archiving/Other
 License:	GPL-2.0-or-later
-URL:        https://github.com/Parchive/par2cmdline
+URL:		https://github.com/Parchive/par2cmdline
 # project was formerly maintained at https://parchive.sourceforge.net/
 # they have moved development to github
-Source: 	https://github.com/Parchive/par2cmdline/archive/v%{version}/%{tarname}.tar.gz
+Source:		https://github.com/Parchive/par2cmdline/archive/v%{version}/%{tarname}.tar.gz
 
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -19,8 +19,10 @@ BuildRequires:	make
 BuildRequires:	gcc-c++
 
 %description
-%{name} / par2cmdline is a program for creating and using PAR2 files to detect
-damage in data files and repair them if necessary.
+%{name} / par2cmdline is a PAR 2.0 compatible file verification and repair tool.
+
+par2cmdline is a program for creating and using PAR2 files to detect damage
+in data files and repair them if necessary.
 
 It can be used with any kind of file.
 
@@ -38,6 +40,7 @@ It can be used with any kind of file.
 %make_build check
 
 %files
-%{_bindir}/par2*
-%{_mandir}/man1/par2.1.*
-%doc AUTHORS COPYING README.md ROADMAP
+%doc AUTHORS ChangeLog README.md
+%license COPYING
+%{_bindir}/par2{,create,repair,verify}
+%{_mandir}/man1/par2{,create,repair,verify}.1*
